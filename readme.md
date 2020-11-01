@@ -11,7 +11,7 @@
 
 ## Overview
 
-- This is a web server with typescript.
+- This is a web server with [typescript](https://www.typescriptlang.org/).
 - Below are the packages used in this project.
   - [express](https://expressjs.com/) : Fast, unopinionated, minimalist web framework for Node.js
   - [cookie-parser](https://www.npmjs.com/package/cookie-parser) : To get the cookies from the request in the request.cookies.

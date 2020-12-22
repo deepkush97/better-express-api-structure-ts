@@ -27,6 +27,8 @@
 
 - Establishing a webpack for optimised build for js counterpart.
 - Configure the SwaggerUI for api documentation.
+<!--
 - Add a react app for the frontend, utilizing this api, and its best project structure.
 - Creating the react app optimized build.
 - Packing both the react app and the server in a single executable for offline deployment.
+-->

@@ -1,4 +1,9 @@
-import express, { Express } from "express";
+import {
+  Express,
+  json as expressJson,
+  static as expressStatic,
+  urlencoded as expressUrlencoded,
+} from "express";
 import morgan from "morgan";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -11,11 +16,11 @@ import {
 
 export default (app: Express) => {
   app.use(cors());
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
+  app.use(expressJson());
+  app.use(expressUrlencoded({ extended: false }));
   app.use(morgan("dev"));
   app.use(cookieParser());
-  app.use(express.static("public"));
+  app.use(expressStatic("public"));
   app.get("/test", (req, res) => {
     res.send(GetSuccessResponse("Hi, Test is successfull"));
   });

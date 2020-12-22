@@ -21,10 +21,8 @@ export default (router: Router) => {
     if (req.params.index && parseInt(req.params.index) < lotsOfDummies.length)
       res.send(GetSuccessResponse(lotsOfDummies[parseInt(req.params.index)]));
     else
-      res.send(
-        new BadRequestException(
-          `Nothing is there for you with this '${req.params.index}'`
-        )
+      throw new BadRequestException(
+        `Nothing is there for you with this '${req.params.index}'`
       );
   });
 };

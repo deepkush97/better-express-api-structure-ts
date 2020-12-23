@@ -1,5 +1,6 @@
 import express from "express";
 import loaders from "./loaders";
+import { PORT } from "./constants/environment";
 const startServer = (portNumber: number) => {
   const app = express();
   loaders(app);
@@ -8,5 +9,4 @@ const startServer = (portNumber: number) => {
   });
 };
 
-const { PORT } = process.env;
 startServer(parseInt(PORT || "8086"));

@@ -17,18 +17,21 @@
   - [cookie-parser](https://www.npmjs.com/package/cookie-parser) : To get the cookies from the request in the request.cookies.
   - [cors](https://www.npmjs.com/package/cors) : To enable CORS.
   - [morgan](https://www.npmjs.com/package/morgan) : HTTP request logger middleware.
+  - [dotenv](https://www.npmjs.com/package/dotenv) : To load the environment variables from .env files into process.env.
+  - [swagger-jsdoc](https://www.npmjs.com/package/morgan) : Reads the JSDoc-annotated source code and generates an OpenAPI(Swagger) specification.
+  - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) : To serve auto-generated swagger-ui generated API docs from express.
 - To run the typescript in development, I used the [nodemon](https://www.npmjs.com/package/nodemon) + [ts-node](https://www.npmjs.com/package/ts-node) combo.
 
 ## Open Issues
 
 - Don't know which will be good practice to export and imports.
 
-## Next Steps
+<!-- ## Next Steps -->
 
-- Establishing a webpack for optimised build for js counterpart.
-- Configure the SwaggerUI for api documentation.
+<!-- - Establishing a webpack for optimised build for js counterpart.
+- Configure the SwaggerUI for api documentation. -->
 <!--
 - Add a react app for the frontend, utilizing this api, and its best project structure.
 - Creating the react app optimized build.
 - Packing both the react app and the server in a single executable for offline deployment.
--->
+  -->

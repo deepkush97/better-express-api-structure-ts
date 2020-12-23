@@ -8,6 +8,7 @@ import {
   NotFoundExceptionMiddleware,
   ExceptionMiddleware,
 } from "../middlewares";
+import { CODE_FOLDER } from "../constants/environment";
 
 export default (app: Express) => {
   app.use(cors());
@@ -15,7 +16,8 @@ export default (app: Express) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(morgan("dev"));
   app.use(cookieParser());
-  app.use(express.static("public"));
+  app.use(express.static(`./${CODE_FOLDER}/public`));
+
   app.get("/test", (req, res) => {
     res.send(GetSuccessResponse("Hi, Test is successfull"));
   });

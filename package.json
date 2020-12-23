@@ -5,7 +5,9 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/app.ts",
-    "build": "tsc -p .",
+    "pre-build": "rm -rf ./dist/",
+    "build": "npm run pre-build && tsc -p . && npm run post-build",
+    "post-build": "cp -r ./src/public ./dist/public",
     "start": "node dist/app.js"
   },
   "keywords": [
@@ -22,6 +24,8 @@
     "@types/express": "^4.17.8",
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.6",
+    "@types/swagger-jsdoc": "^3.0.2",
+    "@types/swagger-ui-express": "^4.1.2",
     "nodemon": "^2.0.6",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
@@ -29,7 +33,10 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.0.0-rc.5",
+    "swagger-ui-express": "^4.1.5"
   }
 }

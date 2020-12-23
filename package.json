@@ -5,7 +5,9 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/app.ts",
-    "build": "tsc -p .",
+    "pre-build": "rm -rf ./dist/",
+    "build": "npm run pre-build && tsc -p . && npm run post-build",
+    "post-build": "cp -r ./src/public ./dist/public",
     "start": "node dist/app.js"
   },
   "keywords": [

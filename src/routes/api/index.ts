@@ -9,9 +9,11 @@ export default (router: Router) => {
    * /api:
    *  get:
    *      description: API test endpoint
+   *      produces:
+   *        - application/json
    *      responses:
    *          '200':
-   *          description: API root is correct
+   *            description: Returns 'API Index'
    */
   apiRouter.get("/", (req, res) => {
     res.send(GetSuccessResponse("API Index"));

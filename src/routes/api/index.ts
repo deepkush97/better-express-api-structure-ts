@@ -4,6 +4,15 @@ import dummy from "./dummy";
 
 export default (router: Router) => {
   const apiRouter = Router();
+  /**
+   * @swagger
+   * /api/:
+   *  get:
+   *      description: API test endpoint
+   *      responses:
+   *          '200':
+   *          description: API root is correct
+   */
   apiRouter.get("/", (req, res) => {
     res.send(GetSuccessResponse("API Index"));
   });

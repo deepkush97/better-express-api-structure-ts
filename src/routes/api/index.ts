@@ -6,7 +6,7 @@ export default (router: Router) => {
   const apiRouter = Router();
   /**
    * @swagger
-   * /api/:
+   * /api:
    *  get:
    *      description: API test endpoint
    *      responses:

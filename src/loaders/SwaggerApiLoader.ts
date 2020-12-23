@@ -4,10 +4,10 @@ import swaggerUiExpress from "swagger-ui-express";
 import {
   APP_VERSION,
   APP_NAME,
-  APP_ENVIRONMENT,
   PORT,
+  CODE_FOLDER,
+  ROUTE_WILDCARD,
 } from "../constants/environment";
-
 const swaggerDocumentationOptions: swaggerJsDoc.Options = {
   definition: {
     info: {
@@ -17,11 +17,7 @@ const swaggerDocumentationOptions: swaggerJsDoc.Options = {
     },
     servers: [{ url: `http://localhost:${PORT}` }],
   },
-  apis: [
-    `./${APP_ENVIRONMENT === "development" ? "src" : "dist"}/routes/*.${
-      APP_ENVIRONMENT === "development" ? "ts" : "js"
-    }`,
-  ],
+  apis: [ROUTE_WILDCARD],
 };
 
 export default (app: Express) => {
@@ -29,6 +25,8 @@ export default (app: Express) => {
   app.use(
     "/swagger",
     swaggerUiExpress.serve,
-    swaggerUiExpress.setup(swaggerDocumentation)
+    swaggerUiExpress.setup(swaggerDocumentation, {
+      customfavIcon: `../favicon.ico`,
+    })
   );
 };

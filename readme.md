@@ -20,11 +20,23 @@
   - [dotenv](https://www.npmjs.com/package/dotenv) : To load the environment variables from .env files into process.env.
   - [swagger-jsdoc](https://www.npmjs.com/package/morgan) : Reads the JSDoc-annotated source code and generates an OpenAPI(Swagger) specification.
   - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) : To serve auto-generated swagger-ui generated API docs from express.
+  - [helmet](https://www.npmjs.com/package/helmet) : To secure the app by setting various HTTP headers.
+  - [express-bouncer](https://www.npmjs.com/package/express-bouncer) : To mitigate brute-force attacks.
 - To run the typescript in development, I used the [nodemon](https://www.npmjs.com/package/nodemon) + [ts-node](https://www.npmjs.com/package/ts-node) combo.
 
 ## Open Issues
 
 - Don't know which will be good practice to export and imports.
+- Configure Cookie Parser for the following in typescript
+
+```js
+app.use(cookieParser(COOKIE_SECRET, {
+  secure: true,
+  httpOnly: true,
+  domain: DOMAIN,
+  expires:
+}));
+```
 
 ## Next Steps
 

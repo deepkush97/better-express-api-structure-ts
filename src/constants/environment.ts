@@ -2,7 +2,13 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export const { PORT, APP_VERSION, APP_ENVIRONMENT, APP_NAME } = process.env;
+export const {
+  PORT,
+  APP_VERSION,
+  APP_ENVIRONMENT,
+  APP_NAME,
+  COOKIE_SECRET,
+} = process.env;
 
 export const CODE_FOLDER = APP_ENVIRONMENT === "development" ? "src" : "dist";
 export const CODE_FILES_EXTENSION =

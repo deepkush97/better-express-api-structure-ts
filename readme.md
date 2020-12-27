@@ -24,6 +24,31 @@
   - [express-bouncer](https://www.npmjs.com/package/express-bouncer) : To mitigate brute-force attacks.
 - To run the typescript in development, I used the [nodemon](https://www.npmjs.com/package/nodemon) + [ts-node](https://www.npmjs.com/package/ts-node) combo.
 
+## Usage
+
+- The application provides some scripts for building and running the application in development and production.
+
+```json
+    "dev": "nodemon src/app.ts",
+    "pre-build": "rm -rf ./dist/",
+    "build": "npm run pre-build && tsc -p . && npm run post-build",
+    "post-build": "cp -r ./src/public ./dist/public",
+    "start": "node dist/app.js"
+```
+
+- Update the .env as per your configuration.
+
+- Also, when you use nodemon for debugging/hot-reloading the application, please change the `APP_ENVIRONMENT` to `development`.
+
+```dosini
+# .env
+APP_ENVIRONMENT=development
+```
+
+- `/swagger` to get the swagger API documentation page, where all the dummy api will be shown.
+
+_Check the .env for the `APP_ENVIRONMENT` value, change the value as in `development` or `production`_
+
 ## Open Issues
 
 - Don't know which will be good practice to export and imports.
@@ -41,3 +66,7 @@ app.use(cookieParser(COOKIE_SECRET, {
 ## Next Steps
 
 - Improvise the project by establishing some security aspects of node.
+
+---
+
+_For any suggestions, or bugs, please raise issues._

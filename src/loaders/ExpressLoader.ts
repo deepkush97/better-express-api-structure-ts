@@ -6,6 +6,7 @@ import {
 } from "express";
 import morgan from "morgan";
 import cors from "cors";
+import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import { GetSuccessResponse } from "../helpers";
 import routes from "../routes";
@@ -14,16 +15,19 @@ import {
   ExceptionMiddleware,
 } from "../middlewares";
 import { CODE_FOLDER } from "../constants/environment";
+import ExpressBouncerMiddleware from "./ExpressBouncerMiddleware";
 
 export default (app: Express) => {
   app.use(cors());
+  app.use(helmet());
   app.use(expressJson());
+  app.use(ExpressBouncerMiddleware);
   app.use(expressUrlencoded({ extended: false }));
   app.use(morgan("dev"));
   app.use(cookieParser());
   app.use(expressStatic(`./${CODE_FOLDER}/public`));
   app.get("/test", (req, res) => {
-    res.send(GetSuccessResponse("Hi, Test is successfull"));
+    res.send(GetSuccessResponse("Hi, Test is successful"));
   });
   app.use("/", routes());
   app.use(NotFoundExceptionMiddleware);

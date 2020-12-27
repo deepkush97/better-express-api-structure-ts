@@ -1,4 +1,4 @@
-# etter Express Api Structure
+# Better Express Api Structure
 
 ## Introduction
 

@@ -1,5 +1,5 @@
 {
-  "name": "better-project-structure-ts",
+  "name": "better-express-api-structure-ts",
   "version": "0.9.1",
   "description": "This is better project structure for node backend plus frontend application",
   "main": "src/server.ts",

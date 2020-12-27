@@ -1,4 +1,4 @@
-# Better Project Structure
+# Better Express API Structure
 
 ## Introduction
 

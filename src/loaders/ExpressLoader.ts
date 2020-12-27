@@ -14,7 +14,7 @@ import {
   NotFoundExceptionMiddleware,
   ExceptionMiddleware,
 } from "../middlewares";
-import { CODE_FOLDER } from "../constants/environment";
+import { CODE_FOLDER, COOKIE_SECRET } from "../constants/environment";
 import ExpressBouncerMiddleware from "./ExpressBouncerMiddleware";
 
 export default (app: Express) => {
@@ -24,7 +24,7 @@ export default (app: Express) => {
   app.use(ExpressBouncerMiddleware);
   app.use(expressUrlencoded({ extended: false }));
   app.use(morgan("dev"));
-  app.use(cookieParser());
+  app.use(cookieParser(COOKIE_SECRET));
   app.use(expressStatic(`./${CODE_FOLDER}/public`));
   app.get("/test", (req, res) => {
     res.send(GetSuccessResponse("Hi, Test is successful"));

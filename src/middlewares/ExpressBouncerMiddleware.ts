@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import TooManyRequestsException from "../exceptions/ TooManyRequestsException";
+import { TooManyRequestsException } from "../exceptions";
 
 const expressBouncer = require("express-bouncer");
 const bouncer = expressBouncer();

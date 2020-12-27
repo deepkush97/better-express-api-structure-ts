@@ -13,9 +13,9 @@ import routes from "../routes";
 import {
   NotFoundExceptionMiddleware,
   ExceptionMiddleware,
+  ExpressBouncerMiddleware,
 } from "../middlewares";
 import { CODE_FOLDER, COOKIE_SECRET } from "../constants/environment";
-import ExpressBouncerMiddleware from "./ExpressBouncerMiddleware";
 
 export default (app: Express) => {
   app.use(cors());

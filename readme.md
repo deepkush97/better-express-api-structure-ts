@@ -1,4 +1,4 @@
-# Better Express Api Structure
+# Better Express API Structure
 
 ## Introduction
 
